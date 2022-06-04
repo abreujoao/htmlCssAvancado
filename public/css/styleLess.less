@@ -1,0 +1,75 @@
+@cor: rgba(212, 229, 89, 0.755);
+@cor2: rgb(190, 142, 142);
+@cor3: rgb(34, 22, 22);
+@corSombra: rgb(47, 43, 47);
+@tamanhoFonteParagrafo: 12px;
+@corH2:rgb(238, 0, 0);
+@corH3: rgba(247, 143, 16, 0.755);
+
+body{
+    background-color: @cor;
+}
+
+h1{
+    text-align: center;
+    color:@cor2;
+    background-color: @cor2 ;
+    .drop-shadow(); 
+    border-style:solid;
+    border-radius: 10px;
+    border-color: rgb(0, 0, 0);
+    border-style:@corSombra;
+    width: 150px; 
+}
+
+h2{
+    .subtitulos(@corH2, @tamanhoFonteParagrafo + 5px);
+    .drop-shadow();
+}
+
+h3{
+    .subtitulos(@corH3, @tamanhoFonteParagrafo+1px);
+}
+
+.subtitulos(@color, @tamanho){
+    color: @color;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: @tamanho;
+    background-color: if((@tamanho>13px),lightblue,lightgreen);
+
+    & when (@tamanho > 13px){
+        text-align: center;
+        font-style: italic;
+    } else {
+        text-align: justify;
+        font-style: oblique;
+        
+}}
+
+p{
+   // background-color: rgb(255, 255, rgb(69, 158, 69), rgb(173, 200, 75)); 
+}
+
+.drop-shadow() {
+    text-shadow: 2px 1px 1px @corSombra;
+    text-decoration: double;
+    font-weight: bold;
+    
+}
+.texto1{
+    @backgroundTexto1: rgb(255, 255 ,blue(rgb(255, 0, 0)));
+    background-color: darken(@backgroundTexto1, 20%); //lighten para deixar mais com tom mais escuro
+}
+
+div {
+
+    p{
+        font-size: @tamanhoFonteParagrafo + 10px;
+        b{
+            font-size: @tamanhoFonteParagrafo;
+            color: @cor2;
+        }
+    }
+    
+}
